@@ -1,0 +1,104 @@
+@page
+@model InvoiceSystem.RazorPages.Pages.Invoices.CreateModel
+@{
+    ViewData["Title"] = "Create Invoice";
+}
+
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col">
+            <h1>Create New Invoice</h1>
+        </div>
+        <div class="col text-end">
+            <a asp-page="./Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+
+    <div class="alert alert-danger" id="errorMessage" style="display: none;">
+        <i class="bi bi-exclamation-triangle"></i> <span id="errorText"></span>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <form id="createInvoiceForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="invoiceNumber" class="form-label">Invoice Number *</label>
+                        <input type="text" class="form-control" id="invoiceNumber" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="customerName" class="form-label">Customer Name *</label>
+                        <input type="text" class="form-control" id="customerName" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="invoiceDate" class="form-label">Invoice Date *</label>
+                        <input type="date" class="form-control" id="invoiceDate" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="notes" rows="3"></textarea>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Invoice Items</h4>
+                    <button type="button" class="btn btn-success" id="addItemBtn">
+                        <i class="bi bi-plus-circle"></i> Add Item
+                    </button>
+                </div>
+
+                <div id="itemsContainer">
+                    <!-- Items will be added here dynamically -->
+                </div>
+
+                <div class="alert alert-info mt-3" id="noItemsMessage">
+                    <i class="bi bi-info-circle"></i> Click "Add Item" to add invoice items (minimum 1 item required)
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row">
+                    <div class="col-md-6 offset-md-6">
+                        <table class="table">
+                            <tr>
+                                <th>Subtotal:</th>
+                                <td class="text-end" id="subtotalAmount">$0.00</td>
+                            </tr>
+                            <tr>
+                                <th>Tax:</th>
+                                <td class="text-end" id="taxAmount">$0.00</td>
+                            </tr>
+                            <tr class="table-dark">
+                                <th>Total:</th>
+                                <th class="text-end" id="totalAmount">$0.00</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2">
+                    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="bi bi-save"></i> Create Invoice
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/create-invoice.js"></script>
+}

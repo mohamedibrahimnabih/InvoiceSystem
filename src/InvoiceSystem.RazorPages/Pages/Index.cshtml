@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-3">
+        <i class="bi bi-receipt-cutoff text-primary"></i> Invoice Management System
+    </h1>
+    <p class="lead mt-4">Manage your invoices efficiently with our comprehensive system</p>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-plus display-4 text-primary"></i>
+                    <h5 class="card-title mt-3">Create Invoices</h5>
+                    <p class="card-text">Create new invoices with multiple items, tax calculations, and discounts</p>
+                    <a asp-page="/Invoices/Create" class="btn btn-primary">Create New</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-text display-4 text-success"></i>
+                    <h5 class="card-title mt-3">Manage Invoices</h5>
+                    <p class="card-text">View, update, and delete your existing invoices</p>
+                    <a asp-page="/Invoices/Index" class="btn btn-success">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-graph-up display-4 text-info"></i>
+                    <h5 class="card-title mt-3">Track Status</h5>
+                    <p class="card-text">Monitor invoice statuses: Draft, Issued, and Paid</p>
+                    <a asp-page="/Invoices/Index" class="btn btn-info">Track</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3>Features</h3>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <ul class="list-unstyled text-start">
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Create invoices with multiple items</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Automatic tax and discount calculations</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Track invoice status and due dates</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled text-start">
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Real-time total calculations</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Easy invoice deletion</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Clean and intuitive interface</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a asp-page="/Invoices/Index" class="btn btn-primary btn-lg">
+            <i class="bi bi-arrow-right-circle"></i> Get Started
+        </a>
+    </div>
+</div>
