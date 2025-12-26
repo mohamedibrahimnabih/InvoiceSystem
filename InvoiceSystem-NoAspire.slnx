@@ -1,0 +1,28 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/InvoiceSystem.Core/InvoiceSystem.Core.csproj" />
+    <Project Path="src/InvoiceSystem.Infrastructure/InvoiceSystem.Infrastructure.csproj" />
+    <Project Path="src/InvoiceSystem.UseCases/InvoiceSystem.UseCases.csproj" />
+    <Project Path="src/InvoiceSystem.Web/InvoiceSystem.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/InvoiceSystem.FunctionalTests/InvoiceSystem.FunctionalTests.csproj">
+      <BuildDependency Project="src/InvoiceSystem.Web/InvoiceSystem.Web.csproj" />
+    </Project>
+    <Project Path="tests/InvoiceSystem.IntegrationTests/InvoiceSystem.IntegrationTests.csproj">
+      <BuildDependency Project="src/InvoiceSystem.Infrastructure/InvoiceSystem.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/InvoiceSystem.UnitTests/InvoiceSystem.UnitTests.csproj" />
+  </Folder>
+</Solution>
